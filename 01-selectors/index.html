@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS选择器示例</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS选择器示例</h1>
+        
+        <!-- 元素选择器示例 -->
+        <section class="selector-example">
+            <h2>元素选择器</h2>
+            <p>这是一个段落，使用元素选择器 p 来设置样式。</p>
+            <p>这是另一个段落，同样使用元素选择器。</p>
+        </section>
+
+        <!-- 类选择器示例 -->
+        <section class="selector-example">
+            <h2>类选择器</h2>
+            <div class="highlight">这个div使用类选择器 .highlight 来设置样式。</div>
+            <div class="highlight warning">这个div使用多个类选择器。</div>
+        </section>
+
+        <!-- ID选择器示例 -->
+        <section class="selector-example">
+            <h2>ID选择器</h2>
+            <div id="unique">这个div使用ID选择器 #unique 来设置样式。</div>
+        </section>
+
+        <!-- 后代选择器示例 -->
+        <section class="selector-example nested">
+            <h2>后代选择器</h2>
+            <div class="parent">
+                父元素
+                <span>这是父元素中的span</span>
+                <div>
+                    <span>这是嵌套的span</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 伪类选择器示例 -->
+        <section class="selector-example">
+            <h2>伪类选择器</h2>
+            <a href="#" class="pseudo-link">悬停在我上面试试</a>
+            <ul>
+                <li>第一个项目</li>
+                <li>第二个项目</li>
+                <li>第三个项目</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

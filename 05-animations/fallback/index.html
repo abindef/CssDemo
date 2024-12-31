@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS动画降级效果演示</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS动画降级效果演示</h1>
+
+        <!-- 1. 过渡动画降级 -->
+        <section class="demo-section">
+            <h2>1. 过渡动画降级效果</h2>
+            <div class="transition-demo">
+                <div class="box modern">
+                    <span>现代浏览器效果</span>
+                    <p>悬停查看过渡动画</p>
+                </div>
+                <div class="box no-transition">
+                    <span>不支持过渡时的效果</span>
+                    <p>悬停查看直接变化</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 渐进增强示例 -->
+        <section class="demo-section">
+            <h2>2. 渐进增强示例</h2>
+            <div class="progressive-demo">
+                <div class="card">
+                    <div class="content">
+                        <h3>基础效果</h3>
+                        <p>所有浏览器都支持的基础样式</p>
+                    </div>
+                    <div class="enhanced">
+                        增强效果（带动画）
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. JavaScript回退方案 -->
+        <section class="demo-section">
+            <h2>3. JavaScript回退方案</h2>
+            <div class="js-fallback-demo">
+                <button id="animateButton">点击执行动画</button>
+                <div id="animateTarget" class="animate-box">
+                    动画目标
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 替代方案展示 -->
+        <section class="demo-section">
+            <h2>4. 替代方案展示</h2>
+            <div class="alternative-demo">
+                <!-- 使用透明度代替变换 -->
+                <div class="box fade-box">
+                    透明度变化
+                </div>
+                <!-- 使用display代替动画 -->
+                <div class="box display-box">
+                    显示/隐藏切换
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 检测浏览器是否支持CSS过渡
+        function supportsTransitions() {
+            const style = document.createElement('div').style;
+            return 'transition' in style || 
+                   'WebkitTransition' in style ||
+                   'MozTransition' in style ||
+                   'msTransition' in style ||
+                   'OTransition' in style;
+        }
+
+        // JavaScript回退方案
+        const animateButton = document.getElementById('animateButton');
+        const animateTarget = document.getElementById('animateTarget');
+        
+        if (!supportsTransitions()) {
+            animateButton.addEventListener('click', function() {
+                // 简单的JavaScript动画
+                let position = 0;
+                const interval = setInterval(function() {
+                    position += 2;
+                    animateTarget.style.marginLeft = position + 'px';
+                    if (position >= 100) {
+                        clearInterval(interval);
+                    }
+                }, 16);
+            });
+        }
+
+        // 添加支持状态类
+        document.body.classList.add(supportsTransitions() ? 'supports-transitions' : 'no-transitions');
+    </script>
+</body>
+</html>

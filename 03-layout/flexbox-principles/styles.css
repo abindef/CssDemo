@@ -1,0 +1,206 @@
+/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+h2 {
+    color: #3498db;
+    margin-top: 30px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+/* 演示区块样式 */
+.demo-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.explanation {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-left: 4px solid #3498db;
+    margin: 10px 0;
+}
+
+/* Flex容器基础样式 */
+.flex-container {
+    display: flex;
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px dashed #3498db;
+}
+
+/* Flex项目基础样式 */
+.flex-item {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 50px;
+}
+
+/* 1. 主轴与交叉轴演示 */
+.axis-demo {
+    position: relative;
+    min-height: 150px;
+}
+
+.axis-labels {
+    position: relative;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.main-axis, .cross-axis {
+    position: absolute;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.main-axis::before {
+    content: '→';
+    margin-right: 5px;
+}
+
+.cross-axis {
+    transform: rotate(90deg);
+    transform-origin: left top;
+    margin-top: 50px;
+}
+
+.cross-axis::before {
+    content: '→';
+    margin-right: 5px;
+}
+
+/* 2. flex-direction演示 */
+.direction-row {
+    flex-direction: row;
+}
+
+.direction-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.direction-column {
+    flex-direction: column;
+    height: 200px;
+}
+
+/* 3. 空间分配演示 */
+.grow-demo .flex-item {
+    flex-basis: 0;
+}
+
+.grow-1 {
+    flex-grow: 1;
+}
+
+.grow-2 {
+    flex-grow: 2;
+    background-color: #e74c3c;
+}
+
+.shrink-demo .flex-item {
+    width: 200px;
+}
+
+.shrink-1 {
+    flex-shrink: 1;
+}
+
+.shrink-2 {
+    flex-shrink: 2;
+    background-color: #e74c3c;
+}
+
+.basis-auto {
+    flex-basis: auto;
+}
+
+.basis-0 {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.basis-100 {
+    flex-basis: 100px;
+}
+
+/* 4. 对齐方式演示 */
+.justify-demo {
+    justify-content: space-between;
+}
+
+.align-demo {
+    height: 150px;
+    align-items: center;
+}
+
+.align-demo .tall {
+    height: 80px;
+    background-color: #e74c3c;
+}
+
+/* 5. 换行行为演示 */
+.wrap-demo {
+    flex-wrap: wrap;
+    width: 300px;
+}
+
+.align-content-demo {
+    flex-wrap: wrap;
+    width: 300px;
+    height: 200px;
+    align-content: space-between;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .flex-container {
+        padding: 10px;
+    }
+
+    .flex-item {
+        padding: 10px;
+        margin: 3px;
+    }
+
+    .wrap-demo, .align-content-demo {
+        width: 100%;
+    }
+}

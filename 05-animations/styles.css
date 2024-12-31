@@ -1,0 +1,228 @@
+/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+h2 {
+    color: #3498db;
+    margin-top: 30px;
+}
+
+/* 演示区块样式 */
+.demo-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+/* 基础盒子样式 */
+.box {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 4px;
+    text-align: center;
+    width: 150px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* 过渡效果 */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.1);
+}
+
+.hover-rotate {
+    transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+    transform: rotate(15deg);
+}
+
+.hover-color {
+    transition: all 0.3s ease;
+}
+
+.hover-color:hover {
+    background-color: #e74c3c;
+    border-radius: 20px;
+}
+
+/* 2D转换 */
+.transform-demo .box {
+    transition: transform 0.3s ease;
+}
+
+.translate:hover {
+    transform: translate(20px, 20px);
+}
+
+.scale:hover {
+    transform: scale(1.2);
+}
+
+.rotate:hover {
+    transform: rotate(180deg);
+}
+
+.skew:hover {
+    transform: skew(20deg);
+}
+
+/* 3D转换 */
+.transform-3d-demo {
+    perspective: 1000px;
+}
+
+.rotate-3d {
+    transition: transform 0.5s ease;
+}
+
+.rotate-3d:hover {
+    transform: rotate3d(1, 1, 0, 45deg);
+}
+
+.flip-card {
+    height: 100px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-card-front {
+    background-color: #3498db;
+}
+
+.flip-card-back {
+    background-color: #e74c3c;
+    transform: rotateY(180deg);
+}
+
+/* 关键帧动画 */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@keyframes rainbow {
+    0% { background-color: #3498db; }
+    25% { background-color: #e74c3c; }
+    50% { background-color: #2ecc71; }
+    75% { background-color: #f1c40f; }
+    100% { background-color: #3498db; }
+}
+
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+.shake {
+    animation: shake 0.5s infinite;
+}
+
+.rainbow {
+    animation: rainbow 5s infinite;
+}
+
+/* 动画时间函数 */
+.timing-demo .box {
+    position: relative;
+    transition: transform 1.5s;
+}
+
+.timing-demo .box:hover {
+    transform: translateX(100px);
+}
+
+.linear {
+    transition-timing-function: linear;
+}
+
+.ease {
+    transition-timing-function: ease;
+}
+
+.ease-in {
+    transition-timing-function: ease-in;
+}
+
+.ease-out {
+    transition-timing-function: ease-out;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .box {
+        width: calc(50% - 20px);
+    }
+
+    .transform-3d-demo {
+        perspective: none;
+    }
+}

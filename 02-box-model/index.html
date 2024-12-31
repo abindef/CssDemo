@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS盒模型示例</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS盒模型示例</h1>
+
+        <!-- 标准盒模型示例 -->
+        <section class="box-example">
+            <h2>标准盒模型 (content-box)</h2>
+            <div class="content-box">
+                这是标准盒模型示例
+            </div>
+            <p class="explanation">
+                标准盒模型中，width和height只包含内容区域，不包含padding和border
+            </p>
+        </section>
+
+        <!-- 替代盒模型示例 -->
+        <section class="box-example">
+            <h2>替代盒模型 (border-box)</h2>
+            <div class="border-box">
+                这是替代盒模型示例
+            </div>
+            <p class="explanation">
+                替代盒模型中，width和height包含padding和border
+            </p>
+        </section>
+
+        <!-- 外边距折叠示例 -->
+        <section class="box-example">
+            <h2>外边距折叠</h2>
+            <div class="margin-collapse">
+                <div class="box1">盒子1</div>
+                <div class="box2">盒子2</div>
+            </div>
+            <p class="explanation">
+                垂直方向的外边距会发生折叠，取较大值
+            </p>
+        </section>
+
+        <!-- 内边距和边框示例 -->
+        <section class="box-example">
+            <h2>内边距和边框样式</h2>
+            <div class="padding-border-example">
+                <div class="solid">实线边框</div>
+                <div class="dashed">虚线边框</div>
+                <div class="dotted">点线边框</div>
+                <div class="double">双线边框</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

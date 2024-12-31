@@ -1,0 +1,203 @@
+/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.demo-section {
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+/* 1. 线性vs贝塞尔曲线动画 */
+.comparison {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.animation-box {
+    width: 300px;
+    height: 100px;
+    position: relative;
+}
+
+.ball {
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+}
+
+.timeline {
+    width: 100%;
+    height: 2px;
+    background-color: #eee;
+    position: absolute;
+    bottom: 0;
+}
+
+/* 动画类型 */
+.linear {
+    transition: transform 2s linear;
+}
+
+.ease {
+    transition: transform 2s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+}
+
+.ball:hover {
+    transform: translateX(260px);
+}
+
+/* 2. 常见贝塞尔曲线效果 */
+.bezier-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.example {
+    text-align: center;
+}
+
+.ease-default {
+    transition: transform 2s ease;
+}
+
+.ease-in {
+    transition: transform 2s cubic-bezier(0.42, 0, 1.0, 1.0);
+}
+
+.ease-out {
+    transition: transform 2s cubic-bezier(0, 0, 0.58, 1.0);
+}
+
+.ease-in-out {
+    transition: transform 2s cubic-bezier(0.42, 0, 0.58, 1.0);
+}
+
+/* 3. 自定义贝塞尔曲线 */
+.bounce {
+    transition: transform 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.elastic {
+    transition: transform 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 4. 实际应用示例 */
+.practical-examples {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 按钮动画 */
+.animated-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animated-button:hover {
+    transform: scale(1.1);
+}
+
+/* 菜单图标动画 */
+.menu-icon {
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.menu-icon:hover span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-icon:hover span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon:hover span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* 卡片翻转效果 */
+.card {
+    width: 200px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+/* 5. 理论解释部分 */
+.theory .explanation {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.theory p {
+    margin: 10px 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .comparison {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .animation-box {
+        margin: 20px 0;
+    }
+
+    .bezier-examples {
+        grid-template-columns: 1fr;
+    }
+}

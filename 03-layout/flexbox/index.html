@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox布局示例</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flexbox布局示例</h1>
+
+        <!-- 基础Flex容器 -->
+        <section class="demo-section">
+            <h2>基础Flex容器</h2>
+            <div class="flex-container basic">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </section>
+
+        <!-- Flex方向 -->
+        <section class="demo-section">
+            <h2>Flex方向 (flex-direction)</h2>
+            <div class="flex-container direction-row">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+            <div class="flex-container direction-column">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </section>
+
+        <!-- Flex换行 -->
+        <section class="demo-section">
+            <h2>Flex换行 (flex-wrap)</h2>
+            <div class="flex-container wrap">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+                <div class="flex-item">6</div>
+            </div>
+        </section>
+
+        <!-- 主轴对齐 -->
+        <section class="demo-section">
+            <h2>主轴对齐 (justify-content)</h2>
+            <div class="flex-container justify-start">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+            <div class="flex-container justify-center">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+            <div class="flex-container justify-between">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </section>
+
+        <!-- 交叉轴对齐 -->
+        <section class="demo-section">
+            <h2>交叉轴对齐 (align-items)</h2>
+            <div class="flex-container align-items">
+                <div class="flex-item">1</div>
+                <div class="flex-item tall">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </section>
+
+        <!-- Flex增长和收缩 -->
+        <section class="demo-section">
+            <h2>Flex增长和收缩 (flex-grow)</h2>
+            <div class="flex-container grow">
+                <div class="flex-item grow-1">1 (flex-grow: 1)</div>
+                <div class="flex-item grow-2">2 (flex-grow: 2)</div>
+                <div class="flex-item grow-1">3 (flex-grow: 1)</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

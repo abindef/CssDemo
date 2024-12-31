@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贝塞尔曲线动画原理</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>贝塞尔曲线动画原理</h1>
+
+        <!-- 1. 线性动画vs贝塞尔曲线动画对比 -->
+        <section class="demo-section">
+            <h2>1. 线性动画 vs 贝塞尔曲线动画</h2>
+            <div class="comparison">
+                <div class="animation-box">
+                    <div class="ball linear">线性运动</div>
+                    <div class="timeline"></div>
+                </div>
+                <div class="animation-box">
+                    <div class="ball ease">自然运动</div>
+                    <div class="timeline"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 常见的贝塞尔曲线效果 -->
+        <section class="demo-section">
+            <h2>2. 常见的贝塞尔曲线效果</h2>
+            <div class="bezier-examples">
+                <div class="example">
+                    <h3>ease (0.25, 0.1, 0.25, 1.0)</h3>
+                    <div class="ball ease-default"></div>
+                </div>
+                <div class="example">
+                    <h3>ease-in (0.42, 0, 1.0, 1.0)</h3>
+                    <div class="ball ease-in"></div>
+                </div>
+                <div class="example">
+                    <h3>ease-out (0, 0, 0.58, 1.0)</h3>
+                    <div class="ball ease-out"></div>
+                </div>
+                <div class="example">
+                    <h3>ease-in-out (0.42, 0, 0.58, 1.0)</h3>
+                    <div class="ball ease-in-out"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 自定义贝塞尔曲线 -->
+        <section class="demo-section">
+            <h2>3. 自定义贝塞尔曲线</h2>
+            <div class="custom-bezier">
+                <div class="example">
+                    <h3>弹跳效果 (0.68, -0.55, 0.265, 1.55)</h3>
+                    <div class="ball bounce"></div>
+                </div>
+                <div class="example">
+                    <h3>回弹效果 (0.175, 0.885, 0.32, 1.275)</h3>
+                    <div class="ball elastic"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 贝塞尔曲线的实际应用 -->
+        <section class="demo-section">
+            <h2>4. 贝塞尔曲线的实际应用</h2>
+            <div class="practical-examples">
+                <button class="animated-button">悬停效果</button>
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="card">
+                    卡片翻转效果
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 贝塞尔曲线原理解释 -->
+        <section class="demo-section theory">
+            <h2>5. 为什么使用贝塞尔曲线？</h2>
+            <div class="explanation">
+                <p>1. <strong>自然运动模拟</strong>：贝塞尔曲线可以模拟现实世界中的运动规律，比如物体的加速和减速过程。</p>
+                <p>2. <strong>精确控制</strong>：通过调整四个控制点，可以精确控制动画的速度变化。</p>
+                <p>3. <strong>平滑过渡</strong>：贝塞尔曲线提供平滑的速度变化，避免生硬的线性运动。</p>
+                <p>4. <strong>物理特性模拟</strong>：可以模拟弹性、惯性等物理特性，使动画更自然。</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

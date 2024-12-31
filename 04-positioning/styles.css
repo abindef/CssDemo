@@ -1,0 +1,164 @@
+/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+h2 {
+    color: #3498db;
+    margin-top: 30px;
+}
+
+/* 演示区块样式 */
+.demo-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+/* 定位演示容器 */
+.position-demo {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin: 20px 0;
+    min-height: 150px;
+    border-radius: 4px;
+    position: relative;
+}
+
+/* 基础盒子样式 */
+.box {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 4px;
+    text-align: center;
+    width: 200px;
+}
+
+/* 相对定位 */
+.relative {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    background-color: #e74c3c;
+}
+
+/* 绝对定位 */
+.relative-container {
+    position: relative;
+    border: 2px dashed #3498db;
+}
+
+.absolute {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background-color: #2ecc71;
+}
+
+/* 固定定位 */
+.fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #9b59b6;
+    width: 150px;
+    font-size: 14px;
+    z-index: 100;
+}
+
+/* 粘性定位 */
+.sticky-container {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: #f1c40f;
+    margin: 0;
+    width: auto;
+}
+
+.scroll-content {
+    padding: 20px;
+}
+
+.scroll-content p {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+/* Z轴层级示例 */
+.z-index-demo {
+    height: 200px;
+}
+
+.z-index-demo .box {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+}
+
+.z-index-1 {
+    background-color: #3498db;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+.z-index-2 {
+    background-color: #e74c3c;
+    top: 40px;
+    left: 40px;
+    z-index: 2;
+}
+
+.z-index-3 {
+    background-color: #2ecc71;
+    top: 60px;
+    left: 60px;
+    z-index: 3;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .box {
+        width: auto;
+        margin: 5px;
+    }
+
+    .fixed {
+        display: none; /* 在移动设备上隐藏固定定位元素 */
+    }
+}

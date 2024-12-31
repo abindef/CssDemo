@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox布局原理详解</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flexbox布局原理详解</h1>
+
+        <!-- 1. 主轴与交叉轴 -->
+        <section class="demo-section">
+            <h2>1. 主轴与交叉轴</h2>
+            <p class="explanation">主轴（Main Axis）是 flex 项目排列的主要方向，交叉轴（Cross Axis）垂直于主轴。</p>
+            <div class="flex-container axis-demo">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+            <div class="axis-labels">
+                <div class="main-axis">主轴（Main Axis）</div>
+                <div class="cross-axis">交叉轴（Cross Axis）</div>
+            </div>
+        </section>
+
+        <!-- 2. flex-direction属性 -->
+        <section class="demo-section">
+            <h2>2. flex-direction属性</h2>
+            <p class="explanation">控制主轴的方向，决定项目的排列方向。</p>
+            
+            <h3>row（默认）</h3>
+            <div class="flex-container direction-row">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+
+            <h3>row-reverse</h3>
+            <div class="flex-container direction-row-reverse">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+
+            <h3>column</h3>
+            <div class="flex-container direction-column">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </section>
+
+        <!-- 3. flex容器空间分配 -->
+        <section class="demo-section">
+            <h2>3. flex容器空间分配</h2>
+            <p class="explanation">flex-grow、flex-shrink 和 flex-basis 控制项目如何分配空间。</p>
+
+            <h3>flex-grow（增长因子）</h3>
+            <div class="flex-container grow-demo">
+                <div class="flex-item grow-1">flex-grow: 1</div>
+                <div class="flex-item grow-2">flex-grow: 2</div>
+                <div class="flex-item grow-1">flex-grow: 1</div>
+            </div>
+
+            <h3>flex-shrink（收缩因子）</h3>
+            <div class="flex-container shrink-demo">
+                <div class="flex-item shrink-1">flex-shrink: 1</div>
+                <div class="flex-item shrink-2">flex-shrink: 2</div>
+                <div class="flex-item shrink-1">flex-shrink: 1</div>
+            </div>
+
+            <h3>flex-basis（基准大小）</h3>
+            <div class="flex-container basis-demo">
+                <div class="flex-item basis-auto">auto</div>
+                <div class="flex-item basis-0">0</div>
+                <div class="flex-item basis-100">100px</div>
+            </div>
+        </section>
+
+        <!-- 4. 对齐方式 -->
+        <section class="demo-section">
+            <h2>4. 对齐方式</h2>
+            <p class="explanation">justify-content控制主轴对齐，align-items控制交叉轴对齐。</p>
+
+            <h3>justify-content</h3>
+            <div class="flex-container justify-demo">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+
+            <h3>align-items</h3>
+            <div class="flex-container align-demo">
+                <div class="flex-item">1</div>
+                <div class="flex-item tall">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </section>
+
+        <!-- 5. 换行行为 -->
+        <section class="demo-section">
+            <h2>5. 换行行为</h2>
+            <p class="explanation">flex-wrap控制项目是否换行，align-content控制多行对齐。</p>
+
+            <h3>flex-wrap: wrap</h3>
+            <div class="flex-container wrap-demo">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+                <div class="flex-item">6</div>
+            </div>
+
+            <h3>align-content</h3>
+            <div class="flex-container align-content-demo">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+                <div class="flex-item">6</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

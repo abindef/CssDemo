@@ -1,0 +1,130 @@
+/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+h2 {
+    color: #3498db;
+    margin-top: 30px;
+}
+
+/* 演示区块样式 */
+.demo-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+/* Flex容器基础样式 */
+.flex-container {
+    display: flex;
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+/* Flex项目基础样式 */
+.flex-item {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 50px;
+}
+
+/* Flex方向示例 */
+.direction-row {
+    flex-direction: row;
+}
+
+.direction-column {
+    flex-direction: column;
+    height: 300px;
+}
+
+/* Flex换行示例 */
+.wrap {
+    flex-wrap: wrap;
+}
+
+.wrap .flex-item {
+    width: 100px;
+}
+
+/* 主轴对齐示例 */
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+/* 交叉轴对齐示例 */
+.align-items {
+    align-items: center;
+    height: 200px;
+}
+
+.align-items .tall {
+    height: 100px;
+}
+
+/* Flex增长示例 */
+.grow .flex-item {
+    flex-shrink: 0;
+}
+
+.grow-1 {
+    flex-grow: 1;
+}
+
+.grow-2 {
+    flex-grow: 2;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .flex-container {
+        padding: 10px;
+    }
+    
+    .flex-item {
+        padding: 10px;
+        margin: 3px;
+    }
+    
+    .wrap .flex-item {
+        width: 80px;
+    }
+}

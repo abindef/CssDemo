@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS定位示例</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS定位示例</h1>
+
+        <!-- 静态定位（默认） -->
+        <section class="demo-section">
+            <h2>静态定位 (position: static)</h2>
+            <div class="position-demo static">
+                <div class="box">静态定位（默认）</div>
+            </div>
+        </section>
+
+        <!-- 相对定位 -->
+        <section class="demo-section">
+            <h2>相对定位 (position: relative)</h2>
+            <div class="position-demo">
+                <div class="box">普通框</div>
+                <div class="box relative">相对定位框</div>
+                <div class="box">普通框</div>
+            </div>
+        </section>
+
+        <!-- 绝对定位 -->
+        <section class="demo-section">
+            <h2>绝对定位 (position: absolute)</h2>
+            <div class="position-demo relative-container">
+                <div class="box">普通框</div>
+                <div class="box absolute">绝对定位框</div>
+                <div class="box">普通框</div>
+            </div>
+        </section>
+
+        <!-- 固定定位 -->
+        <section class="demo-section">
+            <h2>固定定位 (position: fixed)</h2>
+            <div class="box fixed">
+                固定定位框（滚动页面时保持固定）
+            </div>
+        </section>
+
+        <!-- 粘性定位 -->
+        <section class="demo-section">
+            <h2>粘性定位 (position: sticky)</h2>
+            <div class="sticky-container">
+                <div class="box sticky">粘性定位框（滚动到顶部时固定）</div>
+                <div class="scroll-content">
+                    <p>滚动此区域查看粘性定位效果</p>
+                    <p>内容区域...</p>
+                    <p>更多内容...</p>
+                    <p>继续滚动...</p>
+                    <p>观察粘性定位框的行为</p>
+                    <p>它会在到达顶部时固定</p>
+                    <p>继续滚动看看效果</p>
+                    <p>直到其容器离开视口</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- z-index示例 -->
+        <section class="demo-section">
+            <h2>Z轴层级 (z-index)</h2>
+            <div class="position-demo z-index-demo">
+                <div class="box z-index-1">z-index: 1</div>
+                <div class="box z-index-2">z-index: 2</div>
+                <div class="box z-index-3">z-index: 3</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

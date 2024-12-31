@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式设计示例</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <nav class="nav-desktop">
+                <a href="#" class="logo">Logo</a>
+                <ul class="nav-links">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">产品</a></li>
+                    <li><a href="#">服务</a></li>
+                    <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle">☰</button>
+        </header>
+
+        <nav class="nav-mobile">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">产品</a></li>
+                <li><a href="#">服务</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">联系</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <!-- 响应式网格布局 -->
+            <section class="grid-section">
+                <h2>响应式网格布局</h2>
+                <div class="responsive-grid">
+                    <div class="grid-item">
+                        <img src="https://via.placeholder.com/300" alt="示例图片">
+                        <h3>标题1</h3>
+                        <p>这是一段描述文本，展示响应式布局效果。</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://via.placeholder.com/300" alt="示例图片">
+                        <h3>标题2</h3>
+                        <p>这是一段描述文本，展示响应式布局效果。</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://via.placeholder.com/300" alt="示例图片">
+                        <h3>标题3</h3>
+                        <p>这是一段描述文本，展示响应式布局效果。</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://via.placeholder.com/300" alt="示例图片">
+                        <h3>标题4</h3>
+                        <p>这是一段描述文本，展示响应式布局效果。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 响应式图片 -->
+            <section class="image-section">
+                <h2>响应式图片</h2>
+                <div class="responsive-image">
+                    <img src="https://via.placeholder.com/1200x600" alt="响应式图片">
+                </div>
+            </section>
+
+            <!-- 响应式文字排版 -->
+            <section class="typography-section">
+                <h2>响应式文字排版</h2>
+                <div class="text-content">
+                    <h1 class="responsive-heading">大标题文本</h1>
+                    <p class="responsive-text">这是一段正文内容，演示响应式文字排版效果。在不同屏幕尺寸下，
+                    文字大小会自动调整以保持最佳阅读体验。这里的文本使用了流体排版技术，
+                    字体大小会根据视口宽度进行动态调整。</p>
+                </div>
+            </section>
+
+            <!-- 响应式布局模式 -->
+            <section class="layout-patterns">
+                <h2>响应式布局模式</h2>
+                <div class="column-layout">
+                    <div class="column">
+                        <h3>左侧栏</h3>
+                        <p>在大屏幕上显示为多列布局，在小屏幕上转为单列布局。</p>
+                    </div>
+                    <div class="column">
+                        <h3>中间栏</h3>
+                        <p>内容会根据屏幕宽度自动调整，确保最佳的阅读体验。</p>
+                    </div>
+                    <div class="column">
+                        <h3>右侧栏</h3>
+                        <p>响应式设计确保在所有设备上都能获得良好的用户体验。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 响应式表格 -->
+            <section class="table-section">
+                <h2>响应式表格</h2>
+                <div class="table-container">
+                    <table class="responsive-table">
+                        <thead>
+                            <tr>
+                                <th>标题1</th>
+                                <th>标题2</th>
+                                <th>标题3</th>
+                                <th>标题4</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>内容1</td>
+                                <td>内容2</td>
+                                <td>内容3</td>
+                                <td>内容4</td>
+                            </tr>
+                            <tr>
+                                <td>内容5</td>
+                                <td>内容6</td>
+                                <td>内容7</td>
+                                <td>内容8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer class="responsive-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>关于我们</h4>
+                    <p>这是一个响应式设计示例网站的页脚部分。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>联系方式</h4>
+                    <p>邮箱：example@example.com</p>
+                    <p>电话：123-456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#">微博</a>
+                        <a href="#">微信</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
