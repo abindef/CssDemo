@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA 无障碍样式示例</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ARIA 无障碍样式示例</h1>
+            <nav aria-label="主导航">
+                <ul role="menubar">
+                    <li role="menuitem"><a href="#buttons">按钮示例</a></li>
+                    <li role="menuitem"><a href="#forms">表单示例</a></li>
+                    <li role="menuitem"><a href="#dialogs">对话框示例</a></li>
+                    <li role="menuitem"><a href="#tabs">标签页示例</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- 1. 按钮和状态示例 -->
+            <section id="buttons" aria-labelledby="buttons-heading">
+                <h2 id="buttons-heading">按钮和状态示例</h2>
+                
+                <!-- 切换按钮 -->
+                <button 
+                    class="toggle-button" 
+                    aria-pressed="false"
+                    onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true')">
+                    切换状态
+                </button>
+
+                <!-- 加载按钮 -->
+                <button 
+                    class="loading-button" 
+                    aria-busy="true"
+                    aria-label="正在加载">
+                    <span class="loading-spinner"></span>
+                    加载中
+                </button>
+
+                <!-- 展开/收起按钮 -->
+                <button 
+                    class="expand-button" 
+                    aria-expanded="false"
+                    aria-controls="expandable-content"
+                    onclick="toggleExpand(this)">
+                    展开内容
+                </button>
+                <div id="expandable-content" class="expandable" aria-hidden="true">
+                    可展开的内容区域
+                </div>
+            </section>
+
+            <!-- 2. 表单控件示例 -->
+            <section id="forms" aria-labelledby="forms-heading">
+                <h2 id="forms-heading">表单控件示例</h2>
+                
+                <form>
+                    <!-- 文本输入 -->
+                    <div class="form-group">
+                        <label id="name-label" for="name">姓名</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            aria-labelledby="name-label"
+                            aria-required="true"
+                            aria-invalid="false">
+                        <span class="error" aria-live="polite"></span>
+                    </div>
+
+                    <!-- 下拉选择 -->
+                    <div class="form-group">
+                        <label id="color-label" for="color">选择颜色</label>
+                        <select 
+                            id="color" 
+                            aria-labelledby="color-label"
+                            aria-required="true">
+                            <option value="">请选择</option>
+                            <option value="red">红色</option>
+                            <option value="blue">蓝色</option>
+                            <option value="green">绿色</option>
+                        </select>
+                    </div>
+
+                    <!-- 复选框组 -->
+                    <fieldset>
+                        <legend>兴趣爱好</legend>
+                        <div class="checkbox-group" role="group" aria-labelledby="hobbies-label">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hobby1" name="hobbies">
+                                <label for="hobby1">阅读</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hobby2" name="hobbies">
+                                <label for="hobby2">音乐</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hobby3" name="hobbies">
+                                <label for="hobby3">运动</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+
+            <!-- 3. 对话框示例 -->
+            <section id="dialogs" aria-labelledby="dialogs-heading">
+                <h2 id="dialogs-heading">对话框示例</h2>
+                
+                <button 
+                    onclick="showDialog()"
+                    aria-haspopup="dialog">
+                    打开对话框
+                </button>
+
+                <div 
+                    class="dialog" 
+                    role="dialog"
+                    aria-labelledby="dialog-title"
+                    aria-modal="true"
+                    hidden>
+                    <div class="dialog-content">
+                        <button 
+                            class="close-button" 
+                            aria-label="关闭对话框"
+                            onclick="closeDialog()">
+                            ×
+                        </button>
+                        <h3 id="dialog-title">确认操作</h3>
+                        <p id="dialog-desc">您确定要执行此操作吗？</p>
+                        <div class="dialog-buttons">
+                            <button onclick="closeDialog()" aria-label="确认操作">确认</button>
+                            <button onclick="closeDialog()" aria-label="取消操作">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 标签页示例 -->
+            <section id="tabs" aria-labelledby="tabs-heading">
+                <h2 id="tabs-heading">标签页示例</h2>
+                
+                <div class="tabs">
+                    <div role="tablist" aria-label="内容标签页">
+                        <button 
+                            role="tab" 
+                            aria-selected="true" 
+                            aria-controls="panel1"
+                            id="tab1">
+                            标签页 1
+                        </button>
+                        <button 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="panel2"
+                            id="tab2">
+                            标签页 2
+                        </button>
+                        <button 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="panel3"
+                            id="tab3">
+                            标签页 3
+                        </button>
+                    </div>
+
+                    <div 
+                        role="tabpanel" 
+                        id="panel1" 
+                        aria-labelledby="tab1">
+                        标签页 1 的内容
+                    </div>
+                    <div 
+                        role="tabpanel" 
+                        id="panel2" 
+                        aria-labelledby="tab2" 
+                        hidden>
+                        标签页 2 的内容
+                    </div>
+                    <div 
+                        role="tabpanel" 
+                        id="panel3" 
+                        aria-labelledby="tab3" 
+                        hidden>
+                        标签页 3 的内容
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // 展开/收起功能
+        function toggleExpand(button) {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            const content = document.getElementById('expandable-content');
+            
+            button.setAttribute('aria-expanded', !isExpanded);
+            content.setAttribute('aria-hidden', isExpanded);
+            content.style.display = isExpanded ? 'none' : 'block';
+            button.textContent = isExpanded ? '展开内容' : '收起内容';
+        }
+
+        // 对话框功能
+        function showDialog() {
+            const dialog = document.querySelector('.dialog');
+            dialog.removeAttribute('hidden');
+            // 焦点管理
+            const closeButton = dialog.querySelector('.close-button');
+            closeButton.focus();
+            
+            // 添加ESC键关闭功能
+            document.addEventListener('keydown', handleEscKey);
+            
+            // 添加点击外部关闭功能
+            dialog.addEventListener('click', handleOutsideClick);
+        }
+
+        function closeDialog() {
+            const dialog = document.querySelector('.dialog');
+            dialog.setAttribute('hidden', '');
+            
+            // 移除事件监听器
+            document.removeEventListener('keydown', handleEscKey);
+            dialog.removeEventListener('click', handleOutsideClick);
+            
+            // 返回焦点到触发按钮
+            document.querySelector('[aria-haspopup="dialog"]').focus();
+        }
+
+        // ESC键关闭处理
+        function handleEscKey(event) {
+            if (event.key === 'Escape') {
+                closeDialog();
+            }
+        }
+
+        // 点击外部关闭处理
+        function handleOutsideClick(event) {
+            if (event.target.classList.contains('dialog')) {
+                closeDialog();
+            }
+        }
+
+        // 标签页功能
+        const tabs = document.querySelectorAll('[role="tab"]');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', e => {
+                const selected = e.target;
+                const tablist = selected.parentNode;
+                const tabs = tablist.querySelectorAll('[role="tab"]');
+                
+                tabs.forEach(tab => {
+                    tab.setAttribute('aria-selected', 'false');
+                    document.getElementById(tab.getAttribute('aria-controls')).hidden = true;
+                });
+                
+                selected.setAttribute('aria-selected', 'true');
+                document.getElementById(selected.getAttribute('aria-controls')).hidden = false;
+            });
+        });
+    </script>
+</body>
+</html>

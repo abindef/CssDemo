@@ -1,0 +1,320 @@
+/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 导航样式 */
+nav[aria-label="主导航"] ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav[aria-label="主导航"] a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+nav[aria-label="主导航"] a:hover,
+nav[aria-label="主导航"] a:focus {
+    background-color: #f0f0f0;
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* 1. 按钮样式 */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover,
+button:focus {
+    background-color: #2980b9;
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* 切换按钮状态样式 */
+.toggle-button[aria-pressed="true"] {
+    background-color: #2ecc71;
+}
+
+/* 加载按钮样式 */
+.loading-button[aria-busy="true"] {
+    position: relative;
+    padding-left: 40px;
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.loading-spinner {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* 展开内容样式 */
+.expandable {
+    padding: 15px;
+    margin: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    display: none;
+}
+
+/* 2. 表单样式 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 无效状态样式 */
+input[aria-invalid="true"] {
+    border-color: #e74c3c;
+    background-color: #fff5f5;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* 必填字段样式 */
+[aria-required="true"]::after {
+    content: " *";
+    color: #e74c3c;
+}
+
+/* 复选框组样式 */
+.checkbox-group {
+    margin: 10px 0;
+}
+
+.checkbox-item {
+    margin: 5px 0;
+}
+
+/* 3. 对话框样式 */
+.dialog[role="dialog"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dialog-content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    color: #666;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    background-color: #e9ecef;
+    color: #333;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dialog-buttons button {
+    min-width: 80px;
+}
+
+.dialog-buttons button:first-child {
+    background-color: #2ecc71;
+}
+
+.dialog-buttons button:last-child {
+    background-color: #95a5a6;
+}
+
+/* 对话框动画 */
+.dialog:not([hidden]) {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.dialog[hidden] {
+    display: none;
+}
+
+.dialog-content {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 4. 标签页样式 */
+.tabs [role="tablist"] {
+    display: flex;
+    gap: 10px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+
+.tabs [role="tab"] {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tabs [role="tab"][aria-selected="true"] {
+    color: #3498db;
+    border-bottom-color: #3498db;
+}
+
+.tabs [role="tabpanel"] {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* 焦点状态样式 */
+:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* 键盘导航样式 */
+:focus-visible {
+    outline: 3px solid #3498db;
+    outline-offset: 3px;
+}
+
+/* 跳过导航链接 */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #3498db;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    nav[aria-label="主导航"] ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tabs [role="tablist"] {
+        flex-direction: column;
+        border-bottom: none;
+    }
+
+    .tabs [role="tab"] {
+        width: 100%;
+        text-align: left;
+        border-left: 2px solid transparent;
+        border-bottom: none;
+        margin: 0;
+    }
+
+    .tabs [role="tab"][aria-selected="true"] {
+        border-left-color: #3498db;
+        border-bottom: none;
+    }
+}
