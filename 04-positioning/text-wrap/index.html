@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本环绕原理演示</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>文本环绕原理演示</h1>
+
+        <!-- 1. 基础文本环绕 -->
+        <section class="demo-section">
+            <h2>1. 基础文本环绕</h2>
+            <div class="wrap-container basic-wrap">
+                <div class="float-box">浮动元素</div>
+                <p class="text-content">
+                    这是一段演示文本，展示浮动元素的基本文本环绕效果。当一个元素
+                    设置为浮动时，它会脱离正常文档流，但后续的内联内容（如文本）
+                    会自动环绕在它的周围。这是因为浮动元素虽然脱离了文档流，但仍
+                    然会占据一定的空间，这个空间会影响内联元素的排列。
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. 多个浮动元素 -->
+        <section class="demo-section">
+            <h2>2. 多个浮动元素</h2>
+            <div class="wrap-container multiple-wrap">
+                <div class="float-box left">左浮动</div>
+                <div class="float-box right">右浮动</div>
+                <p class="text-content">
+                    这个示例展示了多个浮动元素时的文本环绕效果。文本会在两个浮动
+                    元素之间形成"流动"的效果。这种布局在早期经常用于杂志风格的
+                    网页设计中，可以创建更丰富的视觉层次。文本会自动填充所有可用
+                    的空间，确保页面布局的自然和谐。
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. 不同宽度的环绕 -->
+        <section class="demo-section">
+            <h2>3. 不同宽度的环绕</h2>
+            <div class="wrap-container width-wrap">
+                <div class="float-box wide">宽浮动元素</div>
+                <p class="text-content">
+                    这个示例展示了较宽浮动元素的环绕效果。当浮动元素较宽时，剩余
+                    的文本空间会相应减少。浏览器会自动计算剩余空间的宽度，并在这
+                    个空间内对文本进行换行处理。这个过程是自动的，不需要手动设置
+                    换行点。
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. 清除浮动的影响 -->
+        <section class="demo-section">
+            <h2>4. 清除浮动的影响</h2>
+            <div class="wrap-container clear-wrap">
+                <div class="float-box">浮动元素</div>
+                <p class="text-content">
+                    这段文本会环绕在浮动元素周围。
+                </p>
+                <p class="clear-text">
+                    这段文本使用了 clear: left，所以它会出现在浮动元素的下方，
+                    而不是环绕在其周围。这展示了如何控制文本环绕的结束位置。
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. 图文混排示例 -->
+        <section class="demo-section">
+            <h2>5. 实际应用：图文混排</h2>
+            <div class="wrap-container article-wrap">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' font-size='20' text-anchor='middle' dy='.3em' fill='%23666'%3E示例图片%3C/text%3E%3C/svg%3E" 
+                     alt="示例图片" 
+                     class="float-image">
+                <p class="text-content">
+                    这是一个实际的图文混排示例，展示了如何使用浮动来实现图片和文本
+                    的自然排列。图片浮动到左侧，文本自动环绕在图片的右侧。这种布局
+                    方式在文章、博客等内容丰富的页面中非常常见。它可以使页面的视觉
+                    层次更加丰富，同时保持内容的可读性。浮动布局的一个重要特点是它
+                    能够自动处理不同屏幕尺寸下的内容排列，使页面在各种设备上都能保
+                    持良好的阅读体验。
+                </p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位与浮动示例</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>定位与浮动示例</h1>
+
+        <!-- 1. 绝对定位基础 -->
+        <section class="demo-section">
+            <h2>1. 绝对定位基础</h2>
+            <div class="position-demo">
+                <div class="relative-container">
+                    相对定位容器
+                    <div class="absolute-box top-left">左上角</div>
+                    <div class="absolute-box top-right">右上角</div>
+                    <div class="absolute-box bottom-left">左下角</div>
+                    <div class="absolute-box bottom-right">右下角</div>
+                    <div class="absolute-box center">居中</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. z-index层叠 -->
+        <section class="demo-section">
+            <h2>2. z-index层叠</h2>
+            <div class="stacking-demo">
+                <div class="stack-container">
+                    <div class="stack-box" style="z-index: 1">层级 1</div>
+                    <div class="stack-box" style="z-index: 2">层级 2</div>
+                    <div class="stack-box" style="z-index: 3">层级 3</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 浮动布局 -->
+        <section class="demo-section">
+            <h2>3. 浮动布局</h2>
+            <div class="float-demo">
+                <div class="float-container">
+                    <div class="float-left">左浮动</div>
+                    <div class="float-right">右浮动</div>
+                    <p class="text-content">
+                        这是一段环绕在浮动元素周围的文本。浮动元素会脱离正常文档流，
+                        但仍然会影响其他内联元素的排列。这就是为什么文字会自动环绕
+                        在浮动元素的周围。这个特性在早期网页布局中经常被用来实现图
+                        文混排的效果。
+                    </p>
+                </div>
+                <div class="clearfix">清除浮动后的内容</div>
+            </div>
+        </section>
+
+        <!-- 4. 定位与浮动组合 -->
+        <section class="demo-section">
+            <h2>4. 定位与浮动组合</h2>
+            <div class="combined-demo">
+                <div class="combined-container">
+                    <div class="float-card">
+                        <div class="card-badge">热门</div>
+                        <h3>卡片标题</h3>
+                        <p>这是一个结合了浮动和绝对定位的卡片示例。</p>
+                    </div>
+                    <div class="float-card">
+                        <div class="card-badge">新品</div>
+                        <h3>卡片标题</h3>
+                        <p>徽章使用绝对定位，卡片本身使用浮动布局。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 实际应用场景 -->
+        <section class="demo-section">
+            <h2>5. 实际应用场景</h2>
+            
+            <!-- 下拉菜单 -->
+            <div class="dropdown">
+                <button class="dropdown-toggle">下拉菜单</button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">选项 1</a></li>
+                    <li><a href="#">选项 2</a></li>
+                    <li><a href="#">选项 3</a></li>
+                </ul>
+            </div>
+
+            <!-- 模态框 -->
+            <button class="modal-trigger" onclick="toggleModal()">打开模态框</button>
+            <div class="modal" id="demoModal">
+                <div class="modal-content">
+                    <button class="close-button" onclick="toggleModal()">×</button>
+                    <h3>模态框标题</h3>
+                    <p>这是一个使用绝对定位的模态框示例。</p>
+                </div>
+            </div>
+
+            <!-- 工具提示 -->
+            <div class="tooltip-container">
+                <button class="tooltip-trigger">
+                    悬停查看提示
+                    <span class="tooltip">这是一个使用绝对定位的工具提示</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('demoModal');
+            modal.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

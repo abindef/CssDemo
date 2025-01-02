@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 层叠与优先级演示</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS 层叠与优先级演示</h1>
+
+        <!-- 1. 相同属性的覆盖 -->
+        <section class="demo-section">
+            <h2>1. 相同属性的覆盖</h2>
+            <div class="same-property-demo">
+                <div class="box-1">
+                    这个元素的颜色由后面的属性决定
+                </div>
+                <pre class="code-display">
+.box-1 {
+    color: blue;
+    color: red;  /* 这个会生效 */
+}</pre>
+            </div>
+        </section>
+
+        <!-- 2. 选择器优先级 -->
+        <section class="demo-section">
+            <h2>2. 选择器优先级</h2>
+            <div class="specificity-demo">
+                <p class="text" id="special-text">
+                    这个文本的样式由最高优先级的选择器决定
+                </p>
+                <pre class="code-display">
+p { color: blue; }                    /* 优先级: 0,0,0,1 */
+.text { color: green; }               /* 优先级: 0,0,1,0 */
+#special-text { color: red; }         /* 优先级: 0,1,0,0 */</pre>
+            </div>
+        </section>
+
+        <!-- 3. !important 规则 -->
+        <section class="demo-section">
+            <h2>3. !important 规则</h2>
+            <div class="important-demo">
+                <div class="box-2">
+                    这个元素的样式使用了 !important
+                </div>
+                <pre class="code-display">
+.box-2 {
+    color: blue !important;  /* 这个会生效 */
+    color: red;
+}</pre>
+            </div>
+        </section>
+
+        <!-- 4. 继承与覆盖 -->
+        <section class="demo-section">
+            <h2>4. 继承与覆盖</h2>
+            <div class="inheritance-demo">
+                <div class="parent">
+                    父元素文本
+                    <div class="child">
+                        子元素文本
+                    </div>
+                </div>
+                <pre class="code-display">
+.parent {
+    color: blue;
+}
+.child {
+    /* 继承父元素的颜色，但可以被覆盖 */
+    color: red;
+}</pre>
+            </div>
+        </section>
+
+        <!-- 5. 复合属性与单独属性 -->
+        <section class="demo-section">
+            <h2>5. 复合属性与单独属性</h2>
+            <div class="shorthand-demo">
+                <div class="box-3">
+                    复合属性示例
+                </div>
+                <pre class="code-display">
+.box-3 {
+    margin: 20px;              /* 复合属性 */
+    margin-top: 40px;          /* 覆盖单个值 */
+    
+    background: #f0f0f0;       /* 复合属性 */
+    background-color: #e0e0e0; /* 覆盖特定值 */
+}</pre>
+            </div>
+        </section>
+
+        <!-- 6. 媒体查询中的覆盖 -->
+        <section class="demo-section">
+            <h2>6. 媒体查询中的覆盖</h2>
+            <div class="media-demo">
+                <div class="responsive-box">
+                    响应式布局示例（调整窗口大小查看效果）
+                </div>
+                <pre class="code-display">
+.responsive-box {
+    width: 300px;
+}
+@media (max-width: 600px) {
+    .responsive-box {
+        width: 100%;  /* 在小屏幕上覆盖原有宽度 */
+    }
+}</pre>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

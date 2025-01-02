@@ -1,0 +1,143 @@
+/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.demo-section {
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+/* 代码显示样式 */
+.code-display {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: monospace;
+    margin: 10px 0;
+    white-space: pre-wrap;
+}
+
+/* 1. 相同属性的覆盖 */
+.box-1 {
+    color: blue;
+    color: red;  /* 这个会生效 */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* 2. 选择器优先级 */
+p {
+    color: blue;              /* 优先级: 0,0,0,1 */
+}
+
+.text {
+    color: green;            /* 优先级: 0,0,1,0 */
+}
+
+#special-text {
+    color: red;             /* 优先级: 0,1,0,0 */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* 3. !important 规则 */
+.box-2 {
+    color: blue !important;  /* 这个会生效 */
+    color: red;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* 4. 继承与覆盖 */
+.inheritance-demo .parent {
+    color: blue;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.inheritance-demo .child {
+    color: red;  /* 覆盖继承的颜色 */
+    padding: 10px;
+    background-color: #fff;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+/* 5. 复合属性与单独属性 */
+.box-3 {
+    /* 复合属性 */
+    margin: 20px;
+    padding: 20px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    
+    /* 单独属性覆盖 */
+    margin-top: 40px;
+    background-color: #e0e0e0;
+    border-top-color: #999;
+    
+    border-radius: 4px;
+}
+
+/* 6. 媒体查询中的覆盖 */
+.responsive-box {
+    width: 300px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .responsive-box {
+        width: 100%;  /* 在小屏幕上覆盖原有宽度 */
+    }
+}
+
+/* 演示样式 */
+.demo-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.demo-section > div {
+    margin-bottom: 20px;
+}
+
+/* 高亮显示生效的样式 */
+.box-1,
+.box-2,
+.box-3,
+.responsive-box,
+#special-text {
+    transition: all 0.3s ease;
+}
+
+.box-1:hover,
+.box-2:hover,
+.box-3:hover,
+.responsive-box:hover,
+#special-text:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}

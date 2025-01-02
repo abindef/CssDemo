@@ -1,0 +1,322 @@
+/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.demo-section {
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+/* 1. 绝对定位基础 */
+.relative-container {
+    position: relative;
+    height: 300px;
+    background-color: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.absolute-box {
+    position: absolute;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e74c3c;
+}
+
+/* 2. z-index层叠 */
+.stack-container {
+    position: relative;
+    height: 200px;
+    background-color: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    margin: 20px 0;
+}
+
+.stack-box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.stack-box:nth-child(1) {
+    top: 20px;
+    left: 20px;
+}
+
+.stack-box:nth-child(2) {
+    top: 40px;
+    left: 40px;
+    background-color: #e74c3c;
+}
+
+.stack-box:nth-child(3) {
+    top: 60px;
+    left: 60px;
+    background-color: #2ecc71;
+}
+
+/* 3. 浮动布局 */
+.float-container {
+    background-color: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    padding: 20px;
+    margin: 20px 0;
+    overflow: hidden; /* 创建BFC */
+}
+
+.float-left {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.float-right {
+    float: right;
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
+    background-color: #e74c3c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.text-content {
+    margin: 0;
+    color: #666;
+}
+
+.clearfix {
+    clear: both;
+    padding: 10px;
+    background-color: #f1f3f5;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+/* 4. 定位与浮动组合 */
+.combined-container {
+    background-color: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    padding: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.float-card {
+    float: left;
+    width: calc(50% - 40px);
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.card-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+/* 5. 实际应用场景 */
+
+/* 下拉菜单 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+
+.dropdown-toggle {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    min-width: 150px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 0;
+    margin: 5px 0 0;
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f8f9fa;
+}
+
+/* 模态框 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* 工具提示 */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    display: none;
+    margin-bottom: 5px;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #333;
+}
+
+.tooltip-trigger:hover .tooltip {
+    display: block;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .float-card {
+        float: none;
+        width: auto;
+        margin: 20px 0;
+    }
+
+    .float-left,
+    .float-right {
+        float: none;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
